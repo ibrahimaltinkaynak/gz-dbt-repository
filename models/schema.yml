@@ -1,8 +1,15 @@
 version: 2
 
 sources:
-  - name: raw_data # Le nom du dataset BigQuery
-    tables:
-      - name: raw_gz_sales # La première table
-      - name: raw_gz_product # La deuxième table
-      - name: raw_gz_ship # La troisième table
+  - name: raw # Le nom du dataset BigQuery
+    schema: gz_raw_data
+    tables: 
+      - name: sales # La première table
+        identifier: raw_gz_sales
+        
+      - name: product # La deuxième table
+        models: raw_gz_product
+        
+
+      - name: ship # La troisième table
+      models: raw_gz_ship
